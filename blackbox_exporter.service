@@ -1,0 +1,13 @@
+[Unit]
+Description=Prometheus exporter for machine metrics
+After=syslog.target network.target
+
+[Service]
+Type=simple
+RemainAfterExit=no
+User=blackbox_exporter
+Group=blackbox_exporter
+ExecStart=/usr/sbin/blackbox_exporter --config.file /etc/blackbox_exporter/blackbox.yml --log.level info
+
+[Install]
+WantedBy=multi-user.target
