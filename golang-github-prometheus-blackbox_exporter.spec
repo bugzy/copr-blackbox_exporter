@@ -69,7 +69,7 @@ go test -mod vendor
 %attr(0640, blackbox_exporter, blackbox_exporter) %config(noreplace) %{_sysconfdir}/blackbox_exporter/blackbox.yml
 %license LICENSE
 %doc README.md
-%{_sbindir}/blackbox_exporter
+%attr(0755, root, root) %caps(cap_net_raw=ep) %{_sbindir}/blackbox_exporter
 
 %pre
 getent group blackbox_exporter > /dev/null || groupadd -r blackbox_exporter
