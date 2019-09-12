@@ -16,7 +16,7 @@
 
 Name:           golang-%{provider}-%{project}-%{repo}
 Version:        0.14.0
-Release:        1%{?dist}
+Release:        2%{?dist}
 Summary:        Blackbox prober exporter
 License:        ASL 2.0
 URL:            https://%{provider_prefix}
@@ -74,7 +74,7 @@ go test -mod vendor
 %pre
 getent group blackbox_exporter > /dev/null || groupadd -r blackbox_exporter
 getent passwd blackbox_exporter > /dev/null || \
-    useradd -rg blackbox_exporter -s /sbin/nologin \
+    useradd -Mrg blackbox_exporter -s /sbin/nologin \
             -c "blackbox Prometheus exporter" blackbox_exporter
 
 %post
@@ -93,3 +93,5 @@ getent passwd blackbox_exporter > /dev/null || \
 %endif
 
 %changelog
+* Thu Sep 12 2019 Ben Reedy <breed808@breed808.com> - 0.14.0-2
+- Disable creation of home directory for blackbox user
