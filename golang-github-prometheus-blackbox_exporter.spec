@@ -15,8 +15,8 @@
 %global import_path     %{provider_prefix}
 
 Name:           golang-%{provider}-%{project}-%{repo}
-Version:        0.14.0
-Release:        2%{?dist}
+Version:        0.15.1
+Release:        1%{?dist}
 Summary:        Blackbox prober exporter
 License:        ASL 2.0
 URL:            https://%{provider_prefix}
@@ -93,5 +93,8 @@ getent passwd blackbox_exporter > /dev/null || \
 %endif
 
 %changelog
+* Tue Sep 24 2019 Ben Reedy <breed808@breed808.com> - 0.15.1-1
+- Update to latest upstream release
+
 * Thu Sep 12 2019 Ben Reedy <breed808@breed808.com> - 0.14.0-2
 - Disable creation of home directory for blackbox user
