@@ -15,7 +15,7 @@
 %global import_path     %{provider_prefix}
 
 Name:           golang-%{provider}-%{project}-%{repo}
-Version:        0.15.1
+Version:        0.16.0
 Release:        1%{?dist}
 Summary:        Blackbox prober exporter
 License:        ASL 2.0
@@ -93,6 +93,9 @@ getent passwd blackbox_exporter > /dev/null || \
 %endif
 
 %changelog
+* Thu Nov 21 2019 Bugzy Little <bugzylittle@gmail.com> - 0.16.0-1
+- Update to latest upstream release
+
 * Tue Sep 24 2019 Ben Reedy <breed808@breed808.com> - 0.15.1-1
 - Update to latest upstream release
 
